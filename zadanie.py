@@ -20,6 +20,7 @@ class TestTask1:
             self.contpage.go_to_window(handle_num=0)
 
     def test_scenary_1(self):
+        '''Открывает раздел контакты, далее в раздел "Сила в людях" и сравнивает размеры изображений в разделе "Работаем"'''
         self.contpage.go_to_contacts()
         self.contpage.click_banner()
         self.contpage.go_to_window(1)
@@ -29,6 +30,7 @@ class TestTask1:
         self.contpage.check_photo()
 
     def test_scenary_2(self):
+        '''Открывает раздел Контакты, меняет регион по умолчанию и проверяет изменения на странице'''
         self.contpage.go_to_contacts()
         infoHMAO = self.contpage.get_area()
         self.contpage.check_area()
@@ -46,5 +48,6 @@ class TestTask1:
         assert not(errors), errors
 
     def test_scenary_3(self):
+        '''Скачивает плагин и сравнивает размер файла с размером, указанным на сайте'''
         size = self.contpage.download()
         self.contpage.checkrazm(size)
