@@ -73,6 +73,6 @@ class ContactPage(BasePage):
 
     def checkrazm(self, razm:float, path:str = "C:/Users/User/Downloads/sbisplugin-setup-web.exe"):
         '''Проверяет размер файла'''
-        sleep(20)
+        sleep(3)
         razm_skach = round(os.path.getsize(path)/1024/1024,2)
         assert razm_skach == razm, 'скачал не то'
