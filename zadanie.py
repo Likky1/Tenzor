@@ -34,10 +34,10 @@ class TestTask1:
         self.contpage.check_area()
         self.contpage.change_region()
         infoKK = self.contpage.get_area()
-        requirements = {'areapartners' : infoHMAO[1] != infoKK[1],
-                        'areaname' : infoKK[0] == 'Камчатский край',
-                        'newlink' : '41-kamchatskij-kraj' in self.contpage.get_link(),
-                        'newtitle' : 'Камчатский край' in self.contpage.get_title()
+        requirements = {'не совпадают партнеры/n' : infoHMAO[1] != infoKK[1],
+                        'название региона/n' : infoKK[0] == 'Камчатский край',
+                        'изменилась ссылка/n' : '41-kamchatskij-kraj' in self.contpage.get_link(),
+                        'изменилось название страницы/n' : 'Камчатский край' in self.contpage.get_title()
             }
         errors = ''
         for i in requirements:
