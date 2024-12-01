@@ -47,6 +47,8 @@ class ContactPage(BasePage):
         return data
 
     def check_area(self, area = 'Ханты-Мансийский АО-Югра'):
+        '''Сравнвает регион сайта с указанным в параметре
+                :param area: регион для сравнения'''
         info = self.get_area()
         assert info[0] == area and len(info[1]) > 1
 
@@ -72,7 +74,9 @@ class ContactPage(BasePage):
         return razm
 
     def checkrazm(self, razm:float, path:str = "C:/Users/User/Downloads/sbisplugin-setup-web.exe"):
-        '''Проверяет размер файла'''
+        '''сравнивает размер скачанного файла с размером, указанным на сайте
+                :param razm: размер файла, указанный на сайте
+                :param str: путь к файлу'''
         sleep(3)
         razm_skach = round(os.path.getsize(path)/1024/1024,2)
         assert razm_skach == razm, 'скачал не то'
