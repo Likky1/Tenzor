@@ -5,7 +5,7 @@ import pytest
 
 @pytest.mark.usefixtures('browser')
 class TestTask1:
-    '''В данном классе описаны тесты первого задания'''
+    '''В данном классе описаны тесты задания'''
 
     def setup_method(self):
         self.contpage = ContactPage(self.driver)
